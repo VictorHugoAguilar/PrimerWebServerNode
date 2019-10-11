@@ -1,0 +1,19 @@
+{
+  "name": "primerwebservernode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictorHugoAguilar/PrimerWebServerNode.git"
+  },
+  "author": "Victor Hugo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VictorHugoAguilar/PrimerWebServerNode/issues"
+  },
+  "homepage": "https://github.com/VictorHugoAguilar/PrimerWebServerNode#readme"
+}
