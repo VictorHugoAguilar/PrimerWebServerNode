@@ -1,9 +1,16 @@
 const express = require('express')
 const app = express()
 const color = require('colors');
+const colors = require('colors/safe');
+
+const hbs = require('hbs');
+
 
 // creando un middleware
 app.use(express.static(__dirname + '/public'));
+
+// registramos el partials
+hbs.registerPartials(__dirname + '/views/partials');
 
 // express HBS engine
 app.set('view engine', 'hbs');
@@ -11,6 +18,15 @@ app.set('view engine', 'hbs');
 app.get('/', (req, res) => {
 
     res.render('home', {
+        nombre: '@VictorHugo',
+        anio: new Date().getFullYear()
+    });
+
+})
+
+app.get('/about', (req, res) => {
+
+    res.render('about', {
         nombre: '@VictorHugo',
         anio: new Date().getFullYear()
     });
@@ -34,5 +50,7 @@ app.get('/', (req, res) => {
 */
 
 app.listen(3000, () => {
-    console.log('Escuchando peticiones por el puerto 3000'.bgCyan)
+    const date = new Date();
+    console.log(colors.yellow('Iniciado desde ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds() + ':' + date.getMilliseconds()))
+    console.log('Escuchando peticiones por el puerto 3000'.bgCyan);
 });
