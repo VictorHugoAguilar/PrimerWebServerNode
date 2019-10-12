@@ -4,6 +4,8 @@ const color = require('colors');
 const colors = require('colors/safe');
 
 const hbs = require('hbs');
+// importamos las funciones que tenemos en los helperss
+require('./hbs/helpers');
 
 
 // creando un middleware
@@ -15,11 +17,11 @@ hbs.registerPartials(__dirname + '/views/partials');
 // express HBS engine
 app.set('view engine', 'hbs');
 
+
 app.get('/', (req, res) => {
 
     res.render('home', {
         nombre: '@VictorHugo',
-        anio: new Date().getFullYear()
     });
 
 })
@@ -28,7 +30,6 @@ app.get('/about', (req, res) => {
 
     res.render('about', {
         nombre: '@VictorHugo',
-        anio: new Date().getFullYear()
     });
 
 })
