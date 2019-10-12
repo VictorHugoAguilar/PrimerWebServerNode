@@ -3,7 +3,19 @@ const app = express()
 const color = require('colors');
 
 // creando un middleware
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public'));
+
+// express HBS engine
+app.set('view engine', 'hbs');
+
+app.get('/', (req, res) => {
+
+    res.render('home', {
+        nombre: '@VictorHugo',
+        anio: new Date().getFullYear()
+    });
+
+})
 
 /*
 app.get('/', (req, res) => {
