@@ -7,6 +7,8 @@ const hbs = require('hbs');
 // importamos las funciones que tenemos en los helperss
 require('./hbs/helpers');
 
+const port = process.env.PORT || 3000;
+
 
 // creando un middleware
 app.use(express.static(__dirname + '/public'));
@@ -50,8 +52,8 @@ app.get('/', (req, res) => {
 })
 */
 
-app.listen(3000, () => {
+app.listen(port, () => {
     const date = new Date();
     console.log(colors.yellow('Iniciado desde ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds() + ':' + date.getMilliseconds()))
-    console.log('Escuchando peticiones por el puerto 3000'.bgCyan);
+    console.log(`Escuchando peticiones por el puerto ${port}`.bgCyan);
 });
